@@ -31,7 +31,7 @@ endloop.
 * Apresentação dos dados na tela
 CALL FUNCTION 'REUSE_ALV_GRID_DISPLAY'
  EXPORTING
-
+   I_CALLBACK_PROGRAM                = 'SY-REPID '
    I_STRUCTURE_NAME                   = 'SCARR'
 
   TABLES
