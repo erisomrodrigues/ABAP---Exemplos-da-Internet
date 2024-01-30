@@ -5,14 +5,19 @@
 *&---------------------------------------------------------------------*
 REPORT zztest_inline.
 
-DATA ITAB TYPE TABLE OF SCARR.
+" DECLARAÇÃO NA FORMA ANTIGA
+*DATA ITAB TYPE TABLE OF SCARR.
+*
+*SELECT *
+*        FROM SCARR
+*        INTO TABLE ITAB.
+*
+*cl_demo_output=>display( ITAB ).
+
+" DECLARAÇÃO NO ABAP MODERNO (INLINE)
 
 SELECT *
         FROM SCARR
-        INTO TABLE ITAB.
+        INTO TABLE @DATA(ITAB).
 
-cl_demo_output=>display( ITAB
-*  EXPORTING
-*    data =
-*    name =
-).
+cl_demo_output=>display( ITAB ).
